@@ -32,12 +32,12 @@
                     var index = 1;
 
                     for(var meaning in meaningList){
-                        //console.log(meaning);
-
                         if(meaningList.hasOwnProperty(meaning)){
-                            console.log(meaningList[meaning][0]);
 
-                            var syn = meaningList[meaning][0].synonyms.toString();
+                            var meaningItem = meaningList[meaning][0];
+                            console.log(meaningItem);
+
+                            var syn = meaningItem.synonyms.join(', ');
 
                             synonyms += index+ ". (" + meaning + ") "+ syn;
 
@@ -49,6 +49,7 @@
                         }
                         index++;
                     }
+
                     result.status = "success";
                     result.definitions = "";
                     result.synonyms = synonyms;
