@@ -5,10 +5,9 @@ Cloned from https://github.com/krv5vignesh/Dictionary-extension
 ##### GNU General Public License v3.0
 
 Pull requests are accepted.
-> git clone https://github.com/hrai/thesaurus-extension.git
 
 Download the WebExtension here:
-https://addons.mozilla.org/en-US/firefox/addon/english-popup-dictionary/
+https://addons.mozilla.org/en-US/firefox/addon/english-popup-thesaurus/
 
 
 ## Getting Started
