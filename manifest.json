@@ -1,10 +1,9 @@
 {
 
   "manifest_version": 2,
-  "name": "English Popup Dictionary",
-  "version": "1.8.1",
-
-  "description": "An English Dictionary which gives meaning of a word which is double-click selected on a webpage.",
+  "name": "English Popup Thesaurus",
+  "version": 1.0.0,
+  "description": "An English Thesaurus which gives meaning of a word which is double-click selected on a webpage.",
   "icons": {
     "96": "icons/Dico.png"
   },
@@ -19,7 +18,7 @@
 
   "browser_action": {
     "default_icon": "icons/Dico.png",
-    "default_title": "English Popup Dictionary",
+    "default_title": "English Popup Thesaurus",
     "default_popup": "popup/index.html"
   },
   "content_scripts": [
