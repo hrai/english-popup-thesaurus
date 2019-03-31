@@ -8,7 +8,7 @@
     };
     var reusePopup = false;
     var queryPrefix = "https://www.google.com/search?q=define+";
-    
+
     function formatResponse(result) {
         result.googleQuery = queryPrefix + result.searchText;
 
@@ -17,7 +17,7 @@
             result.pronounciation = "";
             return result;
         }
-        
+
         return result;
     }
 
@@ -72,7 +72,7 @@
             $("#searchMoreLink").css(searchMoreLinkCss);
             $("#searchDefinitions").css(searchDefinitionsCss);
             $("#closeBtnEPD").css(closeBtnEPDCss);
-            
+
             $("#searchPronounciation").css("display", "none");
             $("#tooltipTitleHolder").css("display", "none");
             $("#searchMoreLink").css("display", "none");
@@ -246,7 +246,7 @@
         searchData = formatResponse(response.search);
         $("#searchTextTitle").html(searchData.searchText);
         $("#searchPronounciation").html(searchData.pronounciation || "");
-        $("#searchDefinitions").html(searchData.definitions);
+        $("#searchDefinitions").html(searchData.definitions + searchData.synonyms);
         $("#searchMoreLink").prop("href", searchData.googleQuery);
 
         // do not alter position for recursive click in popups

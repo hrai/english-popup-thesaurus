@@ -11,32 +11,47 @@
     function getDefinition(searchText, callback) {
         var definitionApi = "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + searchText;
 
+
+    //definitionApi='http://thesaurus.altervista.org/thesaurus/v1?key=bzNYYKlfcaHmElZ6zMRQ&language=en_US&output=json&word=';
+
         var result = {
             searchText: searchText,
             definitions: "",
             pronounciation: "",
             status: "",
+            synonyms: "",
         };
 
         $.when($.getJSON(definitionApi))
             .then(function(data) {
-                result.pronounciation = data[0].phonetic;
-                var definition = "";
-                if(data[0] && data[0].meaning){
-                    var meanings = data[0].meaning;
+                result.pronounciation = data.phonetic;
+                var synonyms = "";
+
+                if(data && data.meaning){
+                    var meaningList = data.meaning;
                     var index = 1;
-                    for(var meaning in meanings){
-                        if(meanings.hasOwnProperty(meaning)){
-                            definition += index+ ". (" + meaning + ") "+meanings[meaning][0].definition;
-                            if(index != Object.keys(meanings).length){
-                                definition += "<br />";
+
+                    for(var meaning in meaningList){
+                        //console.log(meaning);
+
+                        if(meaningList.hasOwnProperty(meaning)){
+                            console.log(meaningList[meaning][0]);
+
+                            var syn = meaningList[meaning][0].synonyms.toString();
+
+                            synonyms += index+ ". (" + meaning + ") "+ syn;
+
+                            if(index != Object.keys(meaningList).length){
+                                synonyms += "<br />";
                             }
+
+
                         }
                         index++;
                     }
                     result.status = "success";
-                    result.definitions = definition;
-
+                    result.definitions = "";
+                    result.synonyms = synonyms;
                 }
             })
             .fail(function() {
