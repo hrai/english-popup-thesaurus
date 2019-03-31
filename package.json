@@ -1,6 +1,6 @@
 {
-  "name": "dictionary-extension",
-  "description": "A Dictionary popup for Mozilla",
+  "name": "thesaurus-extension",
+  "description": "A Thesaurus popup for Mozilla Firefox",
   "scripts": {
     "precommit": "lint-staged"
   },

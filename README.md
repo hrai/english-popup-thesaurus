@@ -1,9 +1,11 @@
-# Firefox WebExtension - English Popup Dictionary
+# Firefox WebExtension - English Popup Thesaurus
+
+Cloned from https://github.com/krv5vignesh/Dictionary-extension 
 
 ##### GNU General Public License v3.0
 
 Pull requests are accepted.
-> git clone https://github.com/krv5vignesh/Dictionary-extension.git
+> git clone https://github.com/hrai/thesaurus-extension.git
 
 Download the WebExtension here:
 https://addons.mozilla.org/en-US/firefox/addon/english-popup-dictionary/
@@ -11,6 +13,7 @@ https://addons.mozilla.org/en-US/firefox/addon/english-popup-dictionary/
 
 ## Getting Started
 This section provides the instructions for the initial setup.
+
 ### Prerequisites
 1. Git
 2. [NodeJs](https://nodejs.org/en/) Download and install latest LTS version
