@@ -37,12 +37,16 @@
                             var meaningItem = meaningList[meaning][0];
                             console.log(meaningItem);
 
-                            var syn = meaningItem.synonyms.join(', ');
+                            var synonymsArr = meaningItem.synonyms;
 
-                            synonyms += index+ ". (" + meaning + ") "+ syn;
+                            if(synonymsArr) {
+                                var syn = synonymsArr.join(', ');
 
-                            if(index != Object.keys(meaningList).length){
-                                synonyms += "<br />";
+                                synonyms += index+ ". (" + meaning + ") "+ syn;
+
+                                if(index != Object.keys(meaningList).length){
+                                    synonyms += "<br />";
+                                }
                             }
 
 
