@@ -246,7 +246,7 @@
         searchData = formatResponse(response.search);
         $("#searchTextTitle").html(searchData.searchText);
         $("#searchPronounciation").html(searchData.pronounciation || "");
-        $("#searchDefinitions").html(searchData.definitions + searchData.synonyms);
+        $("#searchDefinitions").html(searchData.synonyms);
         $("#searchMoreLink").prop("href", searchData.googleQuery);
 
         // do not alter position for recursive click in popups

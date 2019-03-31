@@ -11,9 +11,6 @@
     function getDefinition(searchText, callback) {
         var definitionApi = "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + searchText;
 
-
-    //definitionApi='http://thesaurus.altervista.org/thesaurus/v1?key=bzNYYKlfcaHmElZ6zMRQ&language=en_US&output=json&word=';
-
         var result = {
             searchText: searchText,
             definitions: "",
@@ -48,15 +45,13 @@
                                     synonyms += "<br />";
                                 }
                             }
-
-
                         }
                         index++;
                     }
 
                     result.status = "success";
                     result.definitions = "";
-                    result.synonyms = synonyms;
+                    result.synonyms = getSynonyms(synonyms);
                 }
             })
             .fail(function() {
@@ -71,6 +66,14 @@
         localStorage.setItem("recentSearchText", msg.searchText);
         getDefinition(msg.searchText, sendResponse);
     });
+
+    function getSynonyms(synonyms) {
+        if(synonyms === '') {
+            return 'No synonyms found';
+        }
+
+        return synonyms;
+    }
 
     function sendResponse(result) {
         var response = {
