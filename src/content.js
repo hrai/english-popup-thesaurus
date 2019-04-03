@@ -1,5 +1,9 @@
 import * as helper from "./helper.js";
 
+
+console.log('test');
+
+
 const content = function() {
     /* global $, browser, DOMPurify*/
 
