@@ -1,3 +1,5 @@
+import * as helper from "./helper.js";
+
 (function() {
     /* global $, browser, DOMPurify*/
 
@@ -8,18 +10,6 @@
     };
     var reusePopup = false;
     var queryPrefix = "https://www.google.com/search?q=define+";
-
-    function formatResponse(result) {
-        result.googleQuery = queryPrefix + result.searchText;
-
-        if (result.status === "fail") {
-            result.definitions = "No definition found";
-            result.pronounciation = "";
-            return result;
-        }
-
-        return result;
-    }
 
     $(document).dblclick(function(event) {
         var selectedObj;
@@ -243,7 +233,7 @@
         $("#searchTextTitle").css("display", "inline");
         $("#tooltipDictBox").show();
 
-        var searchData = formatResponse(response.search);
+        var searchData = helper.formatResponse(response.search);
         $("#searchTextTitle").html(searchData.searchText);
         $("#searchPronounciation").html(searchData.pronounciation || "");
         $("#searchDefinitions").html(searchData.synonyms);
