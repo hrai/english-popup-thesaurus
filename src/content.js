@@ -1,6 +1,6 @@
 import * as helper from "./helper.js";
 
-(function() {
+function content() {
     /* global $, browser, DOMPurify*/
 
     // show definition for only the latest selection
@@ -271,4 +271,6 @@ import * as helper from "./helper.js";
             $("#tooltipDictBox").hide();
         }
     });
-})();
+};
+
+export {content};
