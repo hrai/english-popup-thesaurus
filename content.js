@@ -213,7 +213,6 @@
             return;
         }
 
-        var searchData;
         var textRegion = recentSelection.region;
         var oRect = textRegion.getRangeAt(0).getBoundingClientRect();
 
@@ -243,7 +242,8 @@
         $("#searchMoreLink").css("display", "");
         $("#searchTextTitle").css("display", "inline");
         $("#tooltipDictBox").show();
-        searchData = formatResponse(response.search);
+
+        var searchData = formatResponse(response.search);
         $("#searchTextTitle").html(searchData.searchText);
         $("#searchPronounciation").html(searchData.pronounciation || "");
         $("#searchDefinitions").html(searchData.synonyms);
