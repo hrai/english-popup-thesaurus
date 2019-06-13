@@ -43,6 +43,18 @@
         requestDefinition(selectedObj);
     });
 
+    $(document).keyup(function(event) {
+        hideToolTipBox();
+    });
+
+    function hideToolTipBox() {
+        var toolTipBox = $("#tooltipDictBox");
+        
+        if(toolTipBox.is(":visible")) {
+            toolTipBox.hide();
+        }
+    }
+
     function requestDefinition(selectedObj) {
         var searchText = selectedObj.toString().trim();
         // skip search on nothing/multi words select
@@ -209,7 +221,7 @@
 
     browser.runtime.onMessage.addListener(function(response) {
         if (response.search.searchText !== recentSelection.text) {
-            $("#tooltipDictBox").hide();
+            hideToolTipBox();
             return;
         }
 
@@ -231,6 +243,7 @@
             $("#searchPronounciation").css(textThemes[theme]);
             $("#searchMoreLink").css(searchMoreLinkThemes[theme]);
         }
+
         // update searchQuery
         if (response.db && response.db.searchEngineUrl) {
             queryPrefix = response.db.searchEngineUrl;
@@ -276,9 +289,11 @@
         if (!tooltipDictBox) {
             // tooltip not available, just ignore
         } else if (!tooltipDictBox.contains(event.target)) {
-            $("#tooltipDictBox").hide();
+            hideToolTipBox();
         } else if (closeBtn.contains(event.target)) {
-            $("#tooltipDictBox").hide();
+            hideToolTipBox();
         }
     });
+
+
 })();
