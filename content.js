@@ -74,11 +74,13 @@
             var leftOffset, topOffset;
             var pageWidth, pageHeight;
 
+            var toolTipBox = $("#tooltipDictBox");
+
             // create
             tooltipDictBox = $(purify(tooltipDictBoxHtml));
             $("body").append(tooltipDictBox);
             // insert css
-            $("#tooltipDictBox").css(tooltipDictBoxCss);
+            toolTipBox.css(tooltipDictBoxCss);
             $("#tooltipTitleHolder").css(tooltipTitleHolderCss);
             $("#searchTextTitle").css(searchTextTitleCss);
             $("#searchMoreLink").css(searchMoreLinkCss);
@@ -90,7 +92,7 @@
             $("#searchMoreLink").css("display", "none");
             $("#searchTextTitle").css("display", "none");
             $("#searchDefinitions").html("Searching...");
-            $("#tooltipDictBox").show();
+            toolTipBox.show();
 
             // do not alter position for recursive click in popups
             if (!reusePopup) {
@@ -108,7 +110,7 @@
                 }
                 leftOffset += window.scrollX;
                 topOffset += window.scrollY;
-                $("#tooltipDictBox").css({ top: topOffset, left: leftOffset });
+                toolTipBox.css({ top: topOffset, left: leftOffset });
             }
         }
 
@@ -294,6 +296,4 @@
             hideToolTipBox();
         }
     });
-
-
 })();
