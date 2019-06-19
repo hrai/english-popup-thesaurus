@@ -1,6 +1,6 @@
 # Firefox WebExtension - English Popup Thesaurus
 
-Cloned from https://github.com/krv5vignesh/Dictionary-extension 
+Forked from https://github.com/krv5vignesh/Dictionary-extension 
 
 ##### GNU General Public License v3.0
 
