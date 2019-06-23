@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "English Popup Thesaurus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An English Thesaurus which gives synonyms of a word which is double-click selected on a webpage.",
   "icons": {
     "96": "icons/Dico.png"
