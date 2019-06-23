@@ -21,19 +21,21 @@
 
         $.when($.getJSON(definitionApi))
             .then(function(data) {
-                result.pronounciation = data.phonetic;
+                if(!data)
+                    return;
+                
+                var content = data[0];
+                result.pronounciation = content.phonetic;
                 var synonyms = "";
 
-                if(data && data.meaning){
-                    var meaningList = data.meaning;
+                if(content && content.meaning){
+                    var meaningList = content.meaning;
                     var index = 1;
 
                     for(var meaning in meaningList){
                         if(meaningList.hasOwnProperty(meaning)){
 
                             var meaningItem = meaningList[meaning][0];
-                            console.log(meaningItem);
-
                             var synonymsArr = meaningItem.synonyms;
 
                             if(synonymsArr) {
