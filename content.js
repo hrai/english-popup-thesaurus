@@ -49,8 +49,8 @@
 
     function hideToolTipBox() {
         var toolTipBox = $("#tooltipDictBox");
-        
-        if(toolTipBox.is(":visible")) {
+
+        if (toolTipBox.is(":visible")) {
             toolTipBox.hide();
         }
     }
@@ -74,12 +74,12 @@
             var leftOffset, topOffset;
             var pageWidth, pageHeight;
 
-            var toolTipBox = $("#tooltipDictBox");
-
             // create
             tooltipDictBox = $(purify(tooltipDictBoxHtml));
             $("body").append(tooltipDictBox);
             // insert css
+            var toolTipBox = $("#tooltipDictBox");
+
             toolTipBox.css(tooltipDictBoxCss);
             $("#tooltipTitleHolder").css(tooltipTitleHolderCss);
             $("#searchTextTitle").css(searchTextTitleCss);
