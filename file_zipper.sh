@@ -5,6 +5,6 @@ if [ -f "$PUBLISHED_FILE" ]; then
     rm -f $PUBLISHED_FILE
 fi
 
-zip -r9 $PUBLISHED_FILE background.js content.js dependencies icons LICENSE.txt manifest.json META-INF options popup node_modules/
+zip -r9 $PUBLISHED_FILE background.js content.js dependencies icons LICENSE.txt manifest.json META-INF options popup node_modules/dompurify/dist/purify.min.js
 
 echo "Successfully zipped to '$PUBLISHED_FILE'"
