@@ -1,4 +1,4 @@
-(function() {
+(function () {
     /* global $, browser, DOMPurify*/
 
     // show definition for only the latest selection
@@ -14,14 +14,14 @@
 
         if (result.status === "fail") {
             result.definitions = "No definition found";
-            result.pronounciation = "";
+            result.pronunciation = "";
             return result;
         }
 
         return result;
     }
 
-    $(document).dblclick(function(event) {
+    $(document).dblclick(function (event) {
         var selectedObj;
         var tooltipDictBox;
 
@@ -43,7 +43,7 @@
         requestDefinition(selectedObj);
     });
 
-    $(document).keyup(function(event) {
+    $(document).keyup(function (event) {
         hideToolTipBox();
     });
 
@@ -221,7 +221,7 @@
         return "light";
     }
 
-    browser.runtime.onMessage.addListener(function(response) {
+    browser.runtime.onMessage.addListener(function (response) {
         if (response.search.searchText !== recentSelection.text) {
             hideToolTipBox();
             return;
@@ -260,7 +260,7 @@
 
         var searchData = formatResponse(response.search);
         $("#searchTextTitle").html(searchData.searchText);
-        $("#searchPronounciation").html(searchData.pronounciation || "");
+        $("#searchPronounciation").html(searchData.pronunciation || "");
         $("#searchDefinitions").html(searchData.synonyms);
         $("#searchMoreLink").prop("href", searchData.googleQuery);
 
@@ -284,7 +284,7 @@
         }
     });
 
-    $(document).click(function(event) {
+    $(document).click(function (event) {
         var tooltipDictBox = document.getElementById("tooltipDictBox");
         var closeBtn = document.getElementById("closeBtnEPD");
 

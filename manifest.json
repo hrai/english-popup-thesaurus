@@ -13,7 +13,10 @@
     "storage"
   ],
   "background": {
-    "scripts": ["./dependencies/jquery-3.2.1.min.js", "background.js"]
+    "scripts": [
+        "./dependencies/jquery-3.2.1.min.js",
+        "background.js"
+    ]
   },
 
   "browser_action": {
