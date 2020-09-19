@@ -19,6 +19,8 @@
             synonyms: "",
         };
 
+        var synonyms = "";
+
         $.ajax({
             url: definitionApi,
             crossDomain: true,
@@ -32,8 +34,6 @@
                 if (Array.isArray(phonetics) && phonetics.length) {
                     result.pronunciation = phonetics[0].text;
                 }
-
-                var synonyms = "";
 
                 if (content && content.meanings) {
                     var meaningList = content.meanings;
@@ -63,14 +63,14 @@
                         });
                     });
                 }
-
-                result.synonyms = getSynonyms(synonyms);
-                callback(result);
             },
-            error: function (xhr, textStatus) {
+            error: function (xhr) {
                 result.status = "fail";
-                callback(result);
+                logError(xhr.responseText);
             },
+        }).always(function () {
+            result.synonyms = getSynonyms(synonyms);
+            callback(result);
         });
     }
 
