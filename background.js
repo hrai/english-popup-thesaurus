@@ -19,8 +19,11 @@
             synonyms: "",
         };
 
-        $.when($.getJSON(definitionApi))
-            .then(function (data) {
+        $.ajax({
+            url: definitionApi,
+            crossDomain: true,
+            dataType: "json",
+            success: function (data) {
                 if (!data) return;
 
                 var content = data[0];
@@ -59,41 +62,19 @@
                             }
                         });
                     });
-
-                    // for (var meaning in meaningList) {
-                    //     if (meaningList.hasOwnProperty(meaning)) {
-                    //         var meaningItem = meaningList[meaning][0];
-                    //         var synonymsArr = meaningItem.synonyms;
-
-                    //         if (synonymsArr) {
-                    //             var syn = synonymsArr.join(", ");
-
-                    //             synonyms +=
-                    //                 index + ". (" + meaning + ") " + syn;
-
-                    //             if (index != Object.keys(meaningList).length) {
-                    //                 synonyms += "<br />";
-                    //             }
-                    //         }
-                    //     }
-                    //     index++;
-                    // }
-
-                    result.status = "success";
-                    result.definitions = "";
-                    result.synonyms = getSynonyms(synonyms);
                 }
-            })
-            .fail(function () {
-                result.status = "fail";
-            })
-            .always(function () {
+
+                result.synonyms = getSynonyms(synonyms);
                 callback(result);
-            });
+            },
+            error: function (xhr, textStatus) {
+                result.status = "fail";
+                callback(result);
+            },
+        });
     }
 
     browser.runtime.onMessage.addListener(function (data) {
-        var msg = data;
         setLocalStorageItem(data);
         getDefinition(data, sendResponse);
     });
@@ -115,6 +96,7 @@
             db: dictionarySettings,
             search: result,
         };
+
         browser.tabs
             .query({
                 currentWindow: true,
@@ -139,5 +121,6 @@
             browser.storage.sync.get().then(updateSettings, logError);
         }
     });
+
     browser.storage.sync.get().then(updateSettings, logError);
 })();
