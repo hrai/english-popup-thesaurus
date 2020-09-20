@@ -1,5 +1,5 @@
 (function () {
-    // Default settings
+    var browser = browser || chrome;
     var dictionarySettings = {
         theme: {
             value: "auto", //light/dark/auto

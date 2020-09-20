@@ -1,5 +1,5 @@
 (function () {
-    /* global $, browser, DOMPurify*/
+    var browser = browser || chrome;
 
     // show definition for only the latest selection
     var recentSelection = {
