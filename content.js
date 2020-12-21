@@ -1,6 +1,4 @@
 (function () {
-    var browser = browser || chrome;
-
     // show definition for only the latest selection
     var recentSelection = {
         text: "",

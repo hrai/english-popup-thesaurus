@@ -1,6 +1,4 @@
 (function () {
-    var browser = browser || chrome;
-
     var recentSearch;
     var queryPrefix = "https://www.google.com/search?q=define+";
     /* FIXME: this file has duplicate functions:
