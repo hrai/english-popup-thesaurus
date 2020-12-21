@@ -1,5 +1,4 @@
 (function () {
-    // Default settings
     var dictionarySettings = {
         theme: {
             value: "auto", //light/dark/auto

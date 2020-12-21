@@ -1,12 +1,10 @@
-(function() {
-    /* global $ */
-
+(function () {
     var recentSearch;
     var queryPrefix = "https://www.google.com/search?q=define+";
     /* FIXME: this file has duplicate functions:
-    * e.g. formatResponse, getDefinition
-    * This should be improved.
-    */
+     * e.g. formatResponse, getDefinition
+     * This should be improved.
+     */
     function formatResponse(result) {
         var resultHtml = "",
             definitions;
@@ -40,7 +38,9 @@
     }
 
     function getDefinition(searchText, callback) {
-        var definitionApi = "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + searchText;
+        var definitionApi =
+            "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" +
+            searchText;
 
         var result = {
             searchText: searchText,
@@ -50,16 +50,21 @@
         };
 
         $.when($.getJSON(definitionApi))
-            .then(function(data) {
+            .then(function (data) {
                 result.pronounciation = data[0].phonetic;
                 var definition = "";
-                if(data[0] && data[0].meaning){
+                if (data[0] && data[0].meaning) {
                     var meanings = data[0].meaning;
                     var index = 1;
-                    for(var meaning in meanings){
-                        if(meanings.hasOwnProperty(meaning)){
-                            definition += index+ ". (" + meaning + ") "+meanings[meaning][0].definition;
-                            if(index != Object.keys(meanings).length){
+                    for (var meaning in meanings) {
+                        if (meanings.hasOwnProperty(meaning)) {
+                            definition +=
+                                index +
+                                ". (" +
+                                meaning +
+                                ") " +
+                                meanings[meaning][0].definition;
+                            if (index != Object.keys(meanings).length) {
                                 definition += "<br />";
                             }
                         }
@@ -67,13 +72,12 @@
                     }
                     result.status = "success";
                     result.definitions = definition;
-
                 }
             })
-            .fail(function() {
+            .fail(function () {
                 result.status = "fail";
             })
-            .always(function() {
+            .always(function () {
                 callback(result);
             });
     }
@@ -96,22 +100,24 @@
     });
 
     // enter-key listener
-    document.getElementById("query").addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            requestDefinition($("#query").val());
-        }
-    });
+    document
+        .getElementById("query")
+        .addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                requestDefinition($("#query").val());
+            }
+        });
 
     // click listener
     document
         .getElementById("submitButton")
-        .addEventListener("click", function() {
+        .addEventListener("click", function () {
             requestDefinition($("#query").val());
         });
 
     // double click listener for recursive search
-    $(document).dblclick(function() {
+    $(document).dblclick(function () {
         var selectedText;
 
         if (window.getSelection) {

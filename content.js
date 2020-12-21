@@ -1,6 +1,4 @@
 (function () {
-    /* global $, browser, DOMPurify*/
-
     // show definition for only the latest selection
     var recentSelection = {
         text: "",

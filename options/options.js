@@ -1,19 +1,16 @@
-(function() {
-    /* global browser, $*/
-
-    // Default settings
+(function () {
     var dictionarySettings = {
         theme: {
             value: "auto", //light/dark/auto
         },
-        searchEngineUrl : "https://www.google.com/search?q=define+"
+        searchEngineUrl: "https://www.google.com/search?q=define+",
     };
 
     $("#success-message").hide();
 
     //Get search engine url
     browser.storage.sync.get().then((data) => {
-        if(data.searchEngineUrl){
+        if (data.searchEngineUrl) {
             $("#search-engine").val(data.searchEngineUrl);
         }
     });
