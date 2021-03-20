@@ -1,25 +1,18 @@
-# Firefox WebExtension - English Popup Thesaurus
+# English Popup Thesaurus
 
 Forked from https://github.com/krv5vignesh/Dictionary-extension 
 
-##### GNU General Public License v3.0
+This extension/add-on lets you check the synonyms of words on the web page on the fly.
 
-Pull requests are accepted.
+## How to download the add-on?
+Download the add-on from [firefox's add-on website](https://addons.mozilla.org/en-US/firefox/addon/english-popup-thesaurus/)
+## How to contribute?
 
-Download the WebExtension here:
-https://addons.mozilla.org/en-US/firefox/addon/english-popup-thesaurus/
+### Sponsor
 
+- [Donate/Sponsor](https://github.com/sponsors/hrai) the project
 
-## Getting Started
-This section provides the instructions for the initial setup.
+### Raise issues
 
-### Prerequisites
-1. Git
-2. [NodeJs](https://nodejs.org/en/) Download and install latest LTS version
-3. [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable) Follow their instructions guide
-
-### Installation Setup
-1. Fork this project and clone in your local machine
-2. Make sure the prerequisites are installed
-3. Run `cd <project_folder>`
-4. Run `yarn install` to install all the dependencies
+- Please feel free to raise issues
+- PRs are welcome! :)
