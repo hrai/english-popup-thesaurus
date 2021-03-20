@@ -2,7 +2,7 @@
 
 Forked from https://github.com/krv5vignesh/Dictionary-extension 
 
-This extension/add-on lets you check the synonyms of words on the web page on the fly.
+This extension/add-on lets you check the synonyms of words on web pages on the fly.
 
 ## How to download the add-on?
 Download the add-on from [firefox's add-on website](https://addons.mozilla.org/en-US/firefox/addon/english-popup-thesaurus/)
