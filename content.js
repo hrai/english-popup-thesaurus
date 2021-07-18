@@ -43,8 +43,6 @@
         if(!searchText.match(alphabetOnlyRegex))
             return;
 
-        console.log(searchText);
-
         requestDefinition(selectedObj);
     });
 
