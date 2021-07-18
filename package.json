@@ -2,7 +2,12 @@
   "name": "thesaurus-extension",
   "description": "A Thesaurus popup for Mozilla Firefox",
   "scripts": {
-    "start": "web-ext run",
+    "start": "run-script-os",
+    "start:win32": "web-ext run --firefox=\"c:/Program Files/Firefox Developer Edition/firefox.exe\" --start-url localhost:3000",
+    "start:darwin:linux": "web-ext run --firefox=firefox-developer --start-url localhost:3000",
+    "start:chrome": "run-script-os",
+    "start:chrome:win32": "cd distribution && web-ext run -t chromium --start-url localhost:3000",
+    "start:chrome:linux": "cd distribution && web-ext run -t chromium --chromium-binary '/usr/bin/microsoft-edge' --start-url localhost:3000",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -26,6 +31,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.1",
+    "run-script-os": "^1.1.6",
     "web-ext": "^6.2.0"
   },
   "version": "0.0.0"

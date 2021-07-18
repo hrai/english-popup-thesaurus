@@ -38,10 +38,15 @@
             reusePopup = false;
         }
 
+        var searchText = selectedObj.toString().trim();
+        var alphabetOnlyRegex=/^[A-Z]+$/i;
+        if(!searchText.match(alphabetOnlyRegex))
+            return;
+
         requestDefinition(selectedObj);
     });
 
-    $(document).keyup(function (event) {
+    $(document).keyup(function () {
         hideToolTipBox();
     });
 
