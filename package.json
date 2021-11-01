@@ -22,17 +22,17 @@
     ]
   },
   "dependencies": {
-    "dompurify": "^2.3.0",
-    "eslint": "^7.30.0",
-    "lint-staged": "^11.0.1",
-    "prettier": "^2.3.2"
+    "dompurify": "^2.3.3",
+    "eslint": "^8.1.0",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^7.0.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "run-script-os": "^1.1.6",
-    "web-ext": "^6.2.0"
+    "web-ext": "^6.5.0"
   },
   "version": "0.0.0"
 }
